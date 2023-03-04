@@ -1,1 +1,51 @@
+/** You are given the height H (in metres) and mass M (in kilograms).The Body Mass Index (BMI) of a person is computed as M/H^2 .
+*Report the category into which a person falls, based on his BMI:
+	*Category 1: Underweight if BMI ≤18
+	*Category 2: Normal weight ifBMI ∈\{19, 20,…, 24\}
+	*Category 3: Overweight if BMI ∈\{25, 26,…, 29\}
+	*Category 4: Obesity if BMI ≥30
 
+
+*Input:
+*The first line of input will contain an integer, TT, which denotes the number of testcases. Then the testcases follow.
+*Each testcase contains a single line of input, with two space separated integers, M, HM,H, which denote the mass and height of Agastya respectively.
+*Output:
+ *For each testcase, output in a single line, 1, 2, 31,2,3 or 44, based on the category in which Agastya falls.
+*Constraints
+ *1≤T≤2*10^4
+*1 ≤ M ≤ 10^4  
+*1≤H≤10^2 
+*It is guaranteed that H^2 divides M.
+*/
+
+
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double h, m, bmi;
+    
+
+    cout << "Enter height of the person (in meters):\n ";
+    cin >> h;
+    cout << "Enter mass of the person (in kilograms):\n ";
+    cin >> m;
+
+    bmi = m / pow(h, 2);
+
+    if (bmi <= 18) {
+        cout << "The person is Underweight" << endl;
+    } else if (bmi >= 19 && bmi <= 24) {
+        cout << "The person has Normal weight" << endl;
+    } else if (bmi >= 25 && bmi <= 29) {
+        cout << "The person is Overweight" << endl;
+    } else {
+        cout << "The person has Obesity" << endl;
+    }
+
+    return 0;
+}
